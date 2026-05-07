@@ -212,11 +212,9 @@ function calc_gpa() {
 }
 
 
-
-
-
 add_assignment();
 add_assignment();
 add_assignment();
 add_course();
 add_course();
+
