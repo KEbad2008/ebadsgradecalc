@@ -1,71 +1,116 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <link rel="icon" type="image/x-icon" href="images.png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Grade Calculator By Ebad K</title>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="designs.css">
+<head>
+  <link rel="icon" type="image/x-icon" href="skibiditoilet.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ebads grade calculator website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="designs.css">
+hhh
+    <style>
+    body {
+      background-image: url('download.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
 
-    </head>
+</head>
 
+<body>
+<h1>grade calculations website</h1>
+<p class="subtitle">determine your final grade and GPA  (for students or teachers)</p>
+<div class="tabs">
+  <button class="tab active" onclick="switch_tab(event, 'final')">Your Final Grade</button>
+  <button class="tab" onclick="switch_tab(event, 'needed')">grade Needed</button>
+  <button class="tab" onclick="switch_tab(event, 'gpa')">Gpa</button>
+</div>
+<div id="page_final" class="page active">
+  <div class="card">
+    <h2>determine your final grade here</h2>
+    <p id="err_final" class="error" style="display:none"></p>
+    <div class="col_labels">
+      <span>name</span>
+      <span>grade percentage</span>
+      <span>weight percentage</span>
+      <span></span>
+    </div>
+    <div id="assignments_list_rows"></div>
+    <button class="btn_secondary" onclick="add_assignment()">
+      + add assignment
+    </button>
 
+    <button onclick="calc_final()" style="margin-top:14px">
+      calculate final grade
+    </button>
 
-    <body>
-        <h1>Grade Calculator By Ebad K</h1>
-        <p class="subtitle">A simple grade and Gpa Calculator Tool for students</p>
-        <div class="tabs">
-            <button class="tab active" onclick="switch_tab(event, 'final')">Final Grade</button>
-            <button class="tab" onclick="switch_tab"(event, 'needed')">Grade needed</button>
-            <button class="tab" onclick="switch_tab(event, 'gpa')">GPA</button>
+    <div id="final_result" class="result_box">
+      <div class="big_grade" id="final_pct"></div>
+      <div class="grade_letter" id="final_letter"></div>
+      <div class="result_label" id="final_result_label"></div>
+    </div>
+  </div>
+</div>
+
+<div id="page_needed" class="page">
+  <div class="card">
+    <h2>what grade do i want</h2>
+    <p id="err_needed" class="error" style="display:none"></p>
+    <label>current grade (percentage)</label>
+    <input type="number" id="cur_grade">
+
+    <label>weight of final exam (percentage)</label>
+    <input type="number" id="exam_weight">
+
+    <label>Grade That I Want (percentage)</label>
+    <input type="number" id="target_grade">
+    <button onclick="calc_needed()">calculate</button>
+    <div id="needed_result" class="needed_box">
+      <div class="needed_num" id="needed_num"></div>
+      <div class="needed_lbl" id="needed_lbl"></div>
+    </div>
+  </div>
+</div>
+
+<div id="page_gpa" class="page">
+  <div class="card">
+    <h2>Gpa Calculator</h2>
+    <p id="err_gpa" class="error" style="display:none"></p>
+    <div class="col_labels two_col">
+      <span>course</span>
+      <span>grade percentage</span>
+      <span></span>
+    </div>
+    <div id="courses_list"></div>
+    <button class="btn_secondary" onclick="add_course()">
+      + add another course
+    </button>
+    <button onclick="calc_gpa()" style="margin-top:14px">
+      calculate GPA
+    </button>
+    <div id="gpa_result" class="result_box">
+      <div class="gpa_result">
+        <div class="gpa_stat">
+          <div class="num" id="gpa_num"></div>
+          <div class="lbl">gpa (4.0)</div>
+        </div>
+        <div class="gpa_stat">
+          <div class="num" id="gpa_avg"></div>
+          <div class="lbl">average %</div>
         </div>
 
-
-        <div id="page_final" class="page_active">
-            <div class="card">
-                <h2>calculate yor final grade</h2>
-                <p id="err_final" class="error" style="display:none"></p>
-                <div class="col_labels">
-                    <span>name</span>
-                    <span>grade percentage</span>
-                    <span>weight percentage</span>
-                    <span></span>
-                </div>
-                <div id="assignment_list_rows"></div>
-                <button class="btn_secondary" onclick="add_assignment()">
-                    + add assignment
-                </button>
-
-                <button onclick="calc_final()" style="margin-top:14px">
-                    calc final grade
-
-                </button>
-
-                <div id="final_result" class="result_box">
-                    <div class="big_grade" id="final_pct"></div>
-                    <div class="grade_letter" id="final_letter"></div>
-                    <div class="result_label" id="final_result_label"></div>
-                </div>
-
-            </div>
-
+        <div class="gpa_stat">
+          <div class="num" id="gpa_letter"></div>
+          <div class="lbl">letter grade</div>
         </div>
-        <h/
-        <h1>why is my website notWORKING
-            
-            <h2><fieldset>  </fieldset></h2>
-        </h1>
-
-        <div id="final_result" class
-        <div id="page needed">
-                div class="card
-                hh
-                2>calculate grade needed on final</h2>
-                <p id="err_needed" class="error" style="display:none"></p>
-                <div class="col_labelsfdg
-        </div>
-        <script src="script.js"></script>yh
-    </body>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
 </html>

@@ -1,4 +1,238 @@
-.design {
-    design
-    color:display: font-family: font-family: scrollbar-3dlight-color: ;;;;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f0f4ff;
+  color: #1a1a2e;
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3b5bdb;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 28px;
+  border: 2px solid #3b5bdb;
+  background: white;
+  color: #3b5bdb;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active,
+.tab:hover {
+  background: #3b5bdb;
+  color: white;
+}
+
+.page {
+  display: none;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #3b5bdb;
+}
+
+button {
+  background: #3b5bdb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: #2f4ac4;
+}
+
+.btn_secondary {
+  background: #f0f4ff;
+  color: #3b5bdb;
+  margin-top: 10px;
+}
+
+.btn_secondary:hover {
+  background: #dce4ff;
+}
+
+.result_box,
+.needed_box {
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 16px;
+  text-align: center;
+  display: none;
+}
+
+.result_box.show,
+.needed_box.show {
+  display: block;
+}
+
+.result_box {
+  background: #f0f4ff;
+}
+
+.needed_box {
+  background: #fff3bf;
+}
+
+.big_grade,
+.needed_num {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #3b5bdb;
+}
+
+.grade_letter {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.result_label,
+.needed_lbl {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.course_row {
+  display: grid;
+  grid-template-columns: 1fr 80px 80px 36px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.course_row.two_col {
+  grid-template-columns: 1fr 80px 36px;
+}
+
+.course_row input {
+  margin-bottom: 0;
+}
+
+.del_btn {
+  background: #ffe3e3;
+  color: #c92a2a;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-weight: 800;
+}
+
+.del_btn:hover {
+  background: #ffc9c9;
+}
+
+.col_labels {
+  display: grid;
+  grid-template-columns: 1fr 80px 80px 36px;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.col_labels.two_col {
+  grid-template-columns: 1fr 80px 36px;
+}
+
+.col_labels span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888;
+}
+
+.gpa_result {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gpa_stat .num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3b5bdb;
+}
+
+.gpa_stat .lbl {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.error {
+  color: #c92a2a;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
